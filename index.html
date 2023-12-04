@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Practice Game</title>
+    <link rel="stylesheet" type="text/css" href="responsive_test.css"> <!-- Ensure this CSS file combines the necessary styles from both original CSS files -->
+    
+
+</head>
+
+<body>
+
+    
+    <nav class="navbar">
+            <ul class="nav-links">
+                <li class="lowered-item"><span id="mathTypeDisplay" class="nav-item"></span></li>
+                
+                <li class="lowered-item"><span id="levelDisplay" class="nav-item"></span></li>
+                
+                <li class="lowered-item" onclick="goBack()" style="cursor:pointer;">חזרה</li>
+               
+                <li> <select id="nameSelect" onchange="setName()">
+                    <option value="Name1">רומי</option> <!-- Replace Name1 with the actual name -->
+                    <option value="Name2">עמרי</option> <!-- Replace Name2 with the actual name -->
+                </select></li>
+            </ul>
+
+            
+        
+        
+            
+    </nav>
+
+    
+    <div id="selectionScreen">
+        
+        <div class="math-type-buttons">
+            <div class="math-symbol addition" onclick="selectMathType('+')">+</div>
+            <div class="math-symbol subtraction" onclick="selectMathType('-')">-</div>
+            <div class="math-symbol multiplication" onclick="selectMathType('×')">×</div>
+            <div class="math-symbol division" onclick="selectMathType('÷')">÷</div>
+            <!-- Add more math types as needed -->
+        </div>
+
+        
+        <div class="btn-level-group">
+            <button class="btn-level-1" onclick="selectLevel('1-10')">1-10</button>
+            <button class="btn-level-2" onclick="selectLevel('1-50')">1-50</button>
+            <button class="btn-level-3" onclick="selectLevel('50-100')">50-100</button>
+            <!-- Add more levels as needed -->
+        </div>
+
+     </div>
+
+
+     <button id="startButton" class="Startgame" onclick="startGame()">התחל</button>
+
+    <div id="gameScreen" style="display:none;">
+        <div id="flashcard"></div>
+        <input type="number" id="userAnswer">
+        
+        <div id="feedbackMessage"></div>
+        <button class="submit-button" onclick="submitAnswer()">בדיקה</button>
+        <!--<div id="correctAnswersCount">Correct Answers: 0</div>-->
+        
+    </div>
+
+    <div class="cloud"></div>
+    <div class="cloud right-cloud"></div>
+
+       
+    <img src="C:\Users\galas\MathTutor\enlarge_PandaStright2.png" alt="Panda" id="pandaImage">
+    <script src="responsive_test.js"></script>
+    
+    <div class="sea"></div>
+    <div class="grass"></div>
+
+        
+    
+
+    
+    <script src="C:\Users\galas\MathTutor\confetti.browser.min.js"></script>
+
+</body>
+</html>
