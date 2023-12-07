@@ -1,5 +1,5 @@
 
-/* Existing styles, optimized for mobile */
+
 /* Basic Reset */
 * {
     margin: 0;
@@ -13,7 +13,9 @@ body {
     text-align: center;
     background-color: #5ba1fb; /* Background color of the webpage */
     height: 100%; /* Ensure at least the body fills the viewport height */
+    min-height: 100%;
     margin: 0; /* Reset any default margins */
+    position: relative;
     
     
 }
@@ -70,16 +72,14 @@ body {
 
 }
 
-
-
-/* Selection Screen Styles */
 #selectionScreen {
-    margin-bottom: 20px;
-    margin-left: auto; /* Align to the right */
-    margin-right: 350px; /* No margin on the right side */
-    width: fit-content; /* Adjust width to fit its content */
-
+    margin: 0 auto; /* This will center the element */
+    max-width: 640px; /* Adjust max-width as needed */
+    width: fit-content;
 }
+
+
+
 
 
 /* Game Screen Styles */
@@ -87,11 +87,12 @@ body {
     position: relative;
    
     padding: 20px;
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     width: 90%;
+    margin: 0;
 
     
     
@@ -291,7 +292,7 @@ background: linear-gradient(
     #99FF99 100%); /* Forest green at the bottom */
 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 z-index: 0; /* Ensure the grass is above the sea */
-position: absolute;
+position: fixed;
 bottom: 0;
 
 }
@@ -322,10 +323,10 @@ left: 0;
 
 #pandaImage {
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: -275px;
+    left:25%;
     transform: translateX(-50%);
-    width: auto;
+    width: 24%;
     height: auto;
     z-index: 2;
     
@@ -523,119 +524,154 @@ left: 0;
 
 
 
-/* Media Queries for Responsiveness */
-@media only screen and (max-width: 768px) {
+
+
+
+@media screen and (max-width: 600px) {
+
+    .body{
+        height: 25%;
+    }
     .navbar {
         flex-direction: column;
-        align-items: center;
+        padding: 5px 10px;
     }
-
-    body {
-    
-        height: 100%; /* Ensure at least the body fills the viewport height */
-        margin: 0; /* Reset any default margins */
-        
-        
-    }
-
     .nav-links {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    #gameScreen {
-        width: 100%;
+        gap: 20px;
         margin-top: 20px;
     }
-
-    .math-symbol {
-        font-size: 20vw; /* Larger for smaller screens */
+    .nav-item {
+        font-size: smaller; /* Adjust the font size */
     }
 
-    .math-type-buttons {
-        display: flex;
-        justify-content: center; /* Center aligned */
-        gap: 20px;
-        margin-bottom: 20px;
-        margin-left: 150px;
+}
+
+@media screen and (max-width: 600px) {
+     #gameScreen, #flashcard, #userAnswer {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%; /* Adjust width for smaller screens */
     }
 
-    .btn-level-group {
-        position: relative; /* Add relative positioning */
-        right: -60px; /* Adjust this value to move the group to the left */
-        display: flex;
-        top: 40px;
-        
-        
+   
+
+    #flashcard, #userAnswer {
+        font-size: smaller; /* Adjust font size */
     }
 
-    .btn-level-1 {
-        
-        font-size: 35px;
-        margin-left: 10px;
-        padding: 15px 25px;
-        
-        
-    }
-
-    .btn-level-2 {
-        
-        font-size: 35px;
-        margin-left: 10px;
-        padding: 15px 25px;
-        
-        
-    }
-
-    .btn-level-3 {
-        
-        font-size: 35px;
-        margin-left: 10px;
-        padding: 15px 25px;
-        
-        
-    }
-
-    .cloud, .cloud::before, .cloud::after, .right-cloud {
-        width: 15vw;
-        height: 5vw;
-    }
-
-    .cloud::after {
-        height: 10vw;
-    }
 
     .grass {
-        height: 110px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        
+        
+        }
+
+    .sea{
+        position: fixed;
+        width: 100%;
+        height: 15%;
+        bottom: 20vw;
     }
-}
 
-/* Media Queries */
-@media only screen and (max-width: 768px) {
-    #pandaImage {
-        bottom: 20px; /* Adjust for the height of the grass on smaller screens */
-        width: 30%;
+    #pandaImage{
+        position: absolute;
+        bottom: -160vw;
+        width: 200px; /* Or whatever new width you want */
+        height: auto; /* This will maintain the aspect ratio */
+        left: 50%;
+        
+        
+
+
+        
     }
-}
 
-@media only screen and (min-width: 769px) and (max-width: 1366px) {
-    #pandaImage {
-        bottom: 30px;
-        width: 25%;
-        left: 15%;
-        transform: initial;
+    .btn-level-group{
+        position: absolute;
+        max-width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        margin-top: 20px;
+        
+        
     }
-}
 
-@media only screen and (min-width: 1367px) {
-    #pandaImage {
-        bottom: 100px;
-        width: 20%;
-        left: initial;
-        transform: initial;
+    .btn-level-1, .btn-level-2, .btn-level-3{
+        font-size: 30px;
     }
-}
+
+    .Startgame {
+       
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        border-radius: 14px;
+        font-size: 30px;
+        position: absolute;
+        top: 530px;
+        padding: 5px 20px;
+        
+    }
+
+    .math-type-buttons{
+        display: flex;
+        justify-content: center; /* This will center the children horizontally in the container */
+        gap: 30px;
+        margin: 20px auto 0; /* Top margin 20px, horizontal margins auto, bottom margin 0 */
+        max-width: 100%; /* Ensures the container does not exceed the width of its parent */ 
+        
+    }
+
+
+        /* Adjust the main cloud size for mobile */
+        .cloud {
+            width: 40px; /* Smaller width for a smaller cloud */
+            height: 15px; /* Smaller height for a smaller cloud */
+            top: auto;
+            bottom: -125%;
+            left: 8%;
+            z-index: 2;
+            
+        }
+    
+        /* Adjust the pseudo-elements for the cloud fluff */
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+        }
+    
+        .cloud::before {
+            top: -7px; /* Adjust as needed for mobile */
+            left: 7px; /* Adjust as needed for mobile */
+            width: 20px; /* Smaller width for a smaller cloud */
+            height: 15px; /* Smaller height for a smaller cloud */
+        }
+    
+        .cloud::after {
+            top: -3px; /* Adjust as needed for mobile */
+            right: -5px; /* Adjust as needed for mobile */
+            width: 25px; /* Smaller width for a smaller cloud */
+            height: 20px; /* Smaller height for a smaller cloud */
+        }
+    
+        /* If you have a right cloud, adjust its size similarly */
+        .right-cloud {
+            right: 8%; /* Adjust the right property as needed for mobile */
+            left: auto;
+            width: 40px; /* Adjust width for main cloud body */
+            height: 15px; /* Adjust height for main cloud body */
+        }
+    }
+    
 
 
 
@@ -645,20 +681,19 @@ left: 0;
 
 
 
-/* Tablets */
-@media (min-width: 600px) {
-    /* Styles for tablet screens */
-    /* Example: Increase font size, adjust layout */
-}
 
-/* Small desktops/laptops */
-@media (min-width: 1024px) {
-    /* Styles for small desktops and laptops */
-    /* Example: Multi-column layout, larger images */
-}
 
-/* Large screens */
-@media (min-width: 1200px) {
-    /* Styles for large screens */
-    /* Example: Further layout adjustments, larger font sizes */
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

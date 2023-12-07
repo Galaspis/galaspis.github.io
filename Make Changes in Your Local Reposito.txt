@@ -1,0 +1,36 @@
+Make Changes in Your Local Repository:
+
+1.Edit, create, and delete files as needed for your project.
+
+2.Stage Your Changes:
+
+When you're ready to save a set of changes, stage them for a commit. This can be done using:
+
+git add .
+
+This command stages all changes in the directory. If you want to stage only specific files, replace . with the file names.
+
+3.Commit Your Changes:
+
+Commit your staged changes with a meaningful message. This records your changes in your local repository's history:
+
+git commit -m "A descriptive message about what you've changed"
+
+Replace the message in quotes with a brief description of your changes.
+
+4.Pull the Latest Changes (Optional but Recommended):
+
+Before pushing your changes, it's a good practice to pull the latest changes from the remote repository. This helps to ensure that you're working with the most up-to-date version and can help prevent merge conflicts:
+
+git pull origin master
+
+5.Replace master with the branch name you're working on if it's different.
+Push Your Changes:
+
+6.Finally, push your committed changes to the remote repository:
+
+git push
+
+Since you've already set the upstream branch, you don't need to specify it again. Just git push will suffice.
+Check for Any Merge Conflicts:
+
