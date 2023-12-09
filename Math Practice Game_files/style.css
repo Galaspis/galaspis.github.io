@@ -9,6 +9,7 @@
 }
 
 body {
+    font-family: Arial, sans-serif;
     text-align: center;
     background-color: #5ba1fb; /* Background color of the webpage */
     height: 100%; /* Ensure at least the body fills the viewport height */
@@ -28,9 +29,6 @@ body {
     background-color: #5ba1fb;
     transform: translateY(-35px); /* Moves the button up by 5 pixels */
 }
-
-
-
 
 .nav-links {
     list-style: none;
@@ -71,8 +69,6 @@ body {
     margin-top: 10px;
     color: white;  /* Adjust this value as needed */
     font-weight: bold;
-    font-family: 'keter YG';
-    font-size: 20px;
 
 }
 
@@ -104,7 +100,10 @@ body {
 }
 
 
-
+button {
+    font-size: 20px;
+    margin-top: 20px;
+}
 
 
 #flashcard {
@@ -341,7 +340,6 @@ left: 0;
     gap: 30px;
     margin-bottom: 20px;
     margin-left: 250px;
-    
 }
 
 .math-symbol {
@@ -349,11 +347,6 @@ left: 0;
     cursor: pointer;
     user-select: none;
     text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
-    font-family: 'keter YG';
-    font-weight: bold;
-    
-    
-
 }
 
 .addition { color: #ffc301; } /* Tomato color for addition */
@@ -534,71 +527,46 @@ left: 0;
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
 
     .body{
-        height: 100%;
+        height: 25%;
     }
     .navbar {
         flex-direction: column;
-        padding: 1px 1px;
+        padding: 5px 10px;
     }
-    
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
     .nav-item {
         font-size: smaller; /* Adjust the font size */
     }
 
-
-    .nav-links {
-        display: flex; /* Hide the nav links by default */
-        gap: 20px;
-        margin-right: 10px;
-    }
-
-    /* When the nav is active (toggled by JavaScript), show the links */
-    .nav-links.active {
-        display: flex;
-    }
-
-    #nameSelect{
-
-        padding: 5px 15px;
-        margin-right: 5px;
-        font-size: 20px;
-
-    }
-
-  
 }
 
-
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
      #gameScreen, #flashcard, #userAnswer {
         margin-left: auto;
         margin-right: auto;
-        width: 90%; /* Adjust width for smaller screens */
+        width: 80%; /* Adjust width for smaller screens */
     }
 
    
 
     #flashcard, #userAnswer {
-        font-size: 55px; /* Adjust font size */
+        font-size: smaller; /* Adjust font size */
     }
-    
-    #userAnswer {
-        padding: 60px 15px;
-
-    }
-
 
 
     .grass {
         position: absolute;
-        bottom: -620px;
+        bottom: -600px;
         left: 0;
         width: 100%;
-        height: 45%;
+        height: 30%;
         
         
         }
@@ -607,7 +575,7 @@ left: 0;
         position: absolute;
         width: 100%;
         height: 25%;
-        bottom: -530px;
+        bottom: -510px;
     }
 
     #pandaImage{
@@ -636,7 +604,6 @@ left: 0;
 
     .btn-level-1, .btn-level-2, .btn-level-3{
         font-size: 30px;
-        margin-top: 20px;
     }
 
     .Startgame {
@@ -647,7 +614,7 @@ left: 0;
         border-radius: 14px;
         font-size: 30px;
         position: absolute;
-        top: 415px;
+        top: 530px;
         padding: 5px 20px;
         
     }
@@ -662,31 +629,12 @@ left: 0;
     }
 
 
-    .submit-button {
-        
-        padding: 8px 30px;
-        font-weight: bold; 
-        font-size: 30px;
-        z-index: 1;
-        left: 50% /* Adjust the value as needed */
-        
-        
-    
-    }
-
-    button.submit-button{
-        margin-top: 50px;
-    }
-
-   
-
-
         /* Adjust the main cloud size for mobile */
         .cloud {
             width: 40px; /* Smaller width for a smaller cloud */
             height: 15px; /* Smaller height for a smaller cloud */
             top: auto;
-            bottom: -100%;
+            bottom: -125%;
             left: 8%;
             z-index: 2;
             
