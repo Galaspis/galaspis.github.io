@@ -77,25 +77,20 @@ body {
 }
 
 #selectionScreen {
-    margin: 0 auto; /* This will center the element */
-    max-width: 640px; /* Adjust max-width as needed */
-    width: fit-content;
+    position: relative;
+    margin: 0 ; /* This will center the element */
+    width: 50%; /* Adjust max-width as needed */
+    
+    
+    
 }
-
-
 
 
 
 /* Game Screen Styles */
 #gameScreen {
     position: relative;
-   
-    padding: 20px;
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 90%;
+    width: 100%;
     margin: 0;
 
     
@@ -133,7 +128,7 @@ body {
         height: 80px;
         padding: 10px 15px;
         margin-top: -1px;
-        margin-left: 460px;
+        margin-left: 300px;
         margin-bottom: 35px;
         font-size: 2.5rem; /* Makes the text larger and easier to read */
         border: 1.5px solid white; /* A solid border with a color that stands out */
@@ -168,9 +163,7 @@ body {
 }
 
    
-#selectionScreen, #gameScreen, #flashcard {
-    max-width: 100%;
-}
+
 
     
      
@@ -193,7 +186,7 @@ body {
     top: 240px;
     z-index: 1;
     text-shadow: 1px 1px 2px rgba(244, 41, 98, 0.8); /* Text shadow for a lifted text effect */
-    left: 810px; /* Adjust the value as needed */
+    left: 790px; /* Adjust the value as needed */
     transform: translateX(-50%);
     font-family: 'keter YG';
     
@@ -296,6 +289,7 @@ z-index: 0; /* Ensure the grass is above the sea */
 position: fixed;
 bottom: 0;
 
+
 }
 
 
@@ -311,7 +305,7 @@ background: linear-gradient(to top, #0B3D91 0%, #008dff 100%); /* Darker blue at
 width: 100%;
 position:fixed;
 z-index: 1;
-bottom: 110px;
+bottom: 130px;
 left: 0;
 
 
@@ -323,9 +317,9 @@ left: 0;
 /* Panda Image Styles */
 
 #pandaImage {
-    position: absolute;
-    bottom: -275px;
-    left:25%;
+    position: fixed;
+    bottom: 5%;
+    left:23%;
     transform: translateX(-50%);
     width: 24%;
     height: auto;
@@ -336,11 +330,14 @@ left: 0;
 
 
 .math-type-buttons {
-    display: flex;
-    justify-content: center; /* Center aligned */
-    gap: 30px;
-    margin-bottom: 20px;
-    margin-left: 250px;
+        position: relative;
+        display: flex;
+        justify-content: center; /* Center aligned */
+        gap: 30px;
+        margin-bottom: 20px;
+        left: 75%;
+    
+    
     
 }
 
@@ -376,7 +373,7 @@ left: 0;
 
 .btn-level-group {
     position: relative; /* Add relative positioning */
-    right: -140px; /* Adjust this value to move the group to the left */
+    left: 80%; /* Adjust this value to move the group to the left */
     display: flex;
 }
 
@@ -577,7 +574,7 @@ left: 0;
      #gameScreen, #flashcard, #userAnswer {
         margin-left: auto;
         margin-right: auto;
-        width: 90%; /* Adjust width for smaller screens */
+         /* Adjust width for smaller screens */
     }
 
    
@@ -587,18 +584,32 @@ left: 0;
     }
     
     #userAnswer {
+        position: absolute;
         padding: 60px 15px;
+        margin-top: 74px;
+        width: 228px ;
+        left: 73px;
 
+
+    }
+
+    #flashcard {
+        
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 30px;
+        width: 345px;
+        font-size: 68px;
     }
 
 
 
     .grass {
         position: absolute;
-        bottom: -620px;
+        bottom: -900px;
         left: 0;
         width: 100%;
-        height: 45%;
+        height: 60%;
         
         
         }
@@ -606,14 +617,14 @@ left: 0;
     .sea{
         position: absolute;
         width: 100%;
-        height: 25%;
-        bottom: -530px;
+        height: 45%;
+        bottom: -775px;
     }
 
     #pandaImage{
         position: absolute;
-        bottom: -160vw;
-        width: 200px; /* Or whatever new width you want */
+        bottom: -240vw;
+        width: 250px; /* Or whatever new width you want */
         height: auto; /* This will maintain the aspect ratio */
         left: 50%;
         
@@ -625,18 +636,24 @@ left: 0;
 
     .btn-level-group{
         position: absolute;
-        max-width: 100%;
-        left: 50%;
+        left: 100%;
         transform: translateX(-50%);
-        display: inline-block;
-        margin-top: 20px;
+        margin-top: 30px;
+        
         
         
     }
 
     .btn-level-1, .btn-level-2, .btn-level-3{
-        font-size: 30px;
-        margin-top: 20px;
+        font-size: 32px;
+        margin: 10px;
+        padding: 3px 27px;
+        
+        width: auto;
+        
+
+        
+        
     }
 
     .Startgame {
@@ -648,7 +665,7 @@ left: 0;
         font-size: 30px;
         position: absolute;
         top: 415px;
-        padding: 5px 20px;
+        padding: 5px 55px;
         
     }
 
@@ -658,7 +675,7 @@ left: 0;
         gap: 30px;
         margin: 20px auto 0; /* Top margin 20px, horizontal margins auto, bottom margin 0 */
         max-width: 100%; /* Ensures the container does not exceed the width of its parent */ 
-        
+        left: 50%;
     }
 
 
@@ -675,7 +692,7 @@ left: 0;
     }
 
     button.submit-button{
-        margin-top: 50px;
+        margin-top: 150px;
     }
 
    
@@ -686,7 +703,7 @@ left: 0;
             width: 40px; /* Smaller width for a smaller cloud */
             height: 15px; /* Smaller height for a smaller cloud */
             top: auto;
-            bottom: -100%;
+            bottom: -200%;
             left: 8%;
             z-index: 2;
             
