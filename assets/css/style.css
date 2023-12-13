@@ -213,7 +213,7 @@ body {
 
 /* Base Cloud Styles */
 .cloud {
-    position: absolute;
+    position: fixed;
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
@@ -743,9 +743,91 @@ left: 0;
     
 
 
+    @media screen and (min-width: 1700px){
+
+        .Startgame{
+
+            left : 60%;
+            top: 630px;
+            font-size: 35px;
+            
+        }
+
+        .btn-level-group{
+           
+            top: 110px;
+            left: 90%;
+            
+            
+            
+        }
+    
+        .btn-level-1, .btn-level-2, .btn-level-3{
+           
+            font-size: 60px;;
+    
+            
+            
+        }
 
 
+        .math-type-buttons{
+            left: 72%;
+            top: 85px;
+        }
 
+
+        .math-symbol{
+            
+            font-size: 180px;
+          ;
+        }
+
+        .submit-button{
+            top: 520px;
+            left: 57%;
+            font-size: 38px;
+        }
+
+        #userAnswer {
+            width: 22%;
+            height: 173px;
+            margin-top: 150px;
+            font-size: 80px;
+        }
+
+        #flashcard{
+            margin-left: 925px;
+            font-size: 100px;
+            top:75px;
+
+        }
+
+        .sea {
+
+            height: 220px;
+            bottom: 135px;
+            
+    }
+
+    .grass{
+
+        height: 180px ;
+        top: 900px;
+        z-index: 1;
+
+    }
+
+    #pandaImage{
+        
+        bottom: 4%;
+        
+
+}
+
+    }
+
+    
 
 
 

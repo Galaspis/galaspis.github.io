@@ -3,13 +3,27 @@ let correctAnswers = 0;
 let questionCount = 0;
 let currentMathType;
 let currentLevel;
+let currentUser;
 
 function setName() {
     var selectedName = document.getElementById('nameSelect').value;
-    // Assuming 'nav-button' is the class of the button you want to update
     var nameButton = document.querySelector('.nav-button');
     if (selectedName) {
         nameButton.textContent = selectedName;
+        // Check if the user exists in Firebase or create a new user
+        const userRef = firebase.database().ref('users/' + selectedName);
+        userRef.once('value', snapshot => {
+            if (snapshot.exists()) {
+                currentUser = snapshot.val();
+                console.log('Existing user:', currentUser);
+                // Update the game with existing user data
+            } else {
+                userRef.set({ name: selectedName, correctAnswers: 0, questionCount: 0 });
+                currentUser = { name: selectedName, correctAnswers: 0, questionCount: 0 };
+                console.log('New user created:', currentUser);
+                // Initialize the game for a new user
+            }
+        });
     }
 }
 
@@ -83,9 +97,9 @@ function generateProblem() {
             minNumber = 1;
             maxNumber = 10;
             break;
-        case '1-50':
+        case '1-30':
             minNumber = 1;
-            maxNumber = 50;
+            maxNumber = 30;
             break;
         case '50-100':
             minNumber = 50;
@@ -191,6 +205,45 @@ function endGame() {
         goBack();
     }
 }
+
+
+// Import the Firebase products that you want to use
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCBiL3yqWlj6sa_hiZjfMSIX0OW5A270jk",
+    authDomain: "education-game-quiz.firebaseapp.com",
+    databaseURL: "https://education-game-quiz-default-rtdb.firebaseio.com/",
+    projectId: "education-game-quiz",
+    storageBucket: "education-game-quiz.appspot.com",
+    messagingSenderId: "795703378603",
+    appId: "1:795703378603:web:61b719d3be3fe796ff2dee"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Database and create a reference to the database
+const database = getDatabase(app);
+
+// Function to write sample data to your database
+function writeSampleData(userId, username) {
+    set(ref(database, 'users/' + userId), {
+        username: username
+    }).then(() => {
+        console.log('Data write succeeded');
+    }).catch((error) => {
+        console.log('Data write failed:', error);
+    });
+}
+
+// Call the function to write data
+writeSampleData('1', 'TestUser');
+
+// Console log to confirm Firebase initialization
+console.log(app.name ? 'Firebase Mode Activated!' : 'Firebase not working :(');
 
 
 
