@@ -20,6 +20,37 @@ const database = getDatabase(app);
 // Console log to confirm Firebase initialization
 console.log(app.name ? 'Firebase Mode Activated!' : 'Firebase not working :(');
 
+function writeUserData(userId, name, mathTypeSelected, level, correctAnswers, incorrectAnswers, sessionDateTime, duration, questionsAttempted) {
+    const userRef = ref(database, 'users/' + userId);
+    set(userRef, {
+        name: name,
+        mathTypeSelected: mathTypeSelected,
+        level: level,
+        correctAnswers: correctAnswers,
+        incorrectAnswers: incorrectAnswers,
+        sessionDateTime: sessionDateTime,
+        duration: duration,
+        questionsAttempted: questionsAttempted
+    }).then(() => {
+        console.log('User data saved successfully');
+    }).catch((error) => {
+        console.error('Error writing user data:', error);
+    });
+}
+
+
+function readUserData(userId) {
+    const userRef = ref(database, 'users/' + userId);
+    onValue(userRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log('User data:', data);
+    }, (error) => {
+        console.error('Error reading user data:', error);
+    });
+}
+
+
+
 
 
 let currentAnswer = 0;
