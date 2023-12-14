@@ -65,22 +65,25 @@ function setName() {
     var nameButton = document.querySelector('.nav-button');
     if (selectedName) {
         nameButton.textContent = selectedName;
-        // Check if the user exists in Firebase or create a new user
-        const userRef = firebase.database().ref('users/' + selectedName);
-        userRef.once('value', snapshot => {
+        // Corrected Firebase reference
+        const userRef = ref(database, 'users/' + selectedName);
+        get(userRef).then((snapshot) => {
             if (snapshot.exists()) {
                 currentUser = snapshot.val();
                 console.log('Existing user:', currentUser);
                 // Update the game with existing user data
             } else {
-                userRef.set({ name: selectedName, correctAnswers: 0, questionCount: 0 });
+                set(userRef, { name: selectedName, correctAnswers: 0, questionCount: 0 });
                 currentUser = { name: selectedName, correctAnswers: 0, questionCount: 0 };
                 console.log('New user created:', currentUser);
                 // Initialize the game for a new user
             }
+        }).catch((error) => {
+            console.error('Error accessing user data:', error);
         });
     }
 }
+
 
 
 function selectMathType(mathType) {
@@ -115,19 +118,7 @@ function selectLevel(level) {
 
 function startGame() {
     // Check if math type and level are selected
-    if (!currentMathType || !currentLevel) {
-        alert("Please select both a math type and a level.");
-        return;
-    }
-
-    document.getElementById('selectionScreen').style.display = 'none';
-    document.getElementById('gameScreen').style.display = 'block';
-
-    questionCount = 0;
-    correctAnswers = 0;
-    generateProblem();
-
-
+   
     if (!currentMathType || !currentLevel) {
             alert("Please select both a math type and a level.");
             return;
@@ -264,13 +255,14 @@ function endGame() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Listener for the name selection dropdown
-    document.getElementById('nameSelect').addEventListener('change', setName);
+    document.querySelector('#nameSelect').addEventListener('change', setName);
 
     // Listeners for math type selection
     document.querySelectorAll('.math-symbol').forEach(symbol => {
         symbol.addEventListener('click', (event) => {
             selectMathType(event.target.textContent);
         });
+
     });
 
     // Listeners for level selection buttons
