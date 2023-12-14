@@ -256,7 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.submit-button').addEventListener('click', submitAnswer);
 
     // Listener for the go back link
-    document.getElementById('goBack').addEventListener('click', goBack);
+    document.querySelector('#goBack').addEventListener('click', goBack);
+
 });
 
 
