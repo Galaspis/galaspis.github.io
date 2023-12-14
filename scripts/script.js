@@ -60,7 +60,6 @@ let currentMathType;
 let currentLevel;
 let currentUser;
 
-import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 function setName() {
     var selectedName = document.getElementById('nameSelect').value;
