@@ -1,3 +1,27 @@
+// Import the Firebase products that you want to use
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCBiL3yqWlj6sa_hiZjfMSIX0OW5A270jk",
+    authDomain: "education-game-quiz.firebaseapp.com",
+    databaseURL: "https://education-game-quiz-default-rtdb.firebaseio.com/",
+    projectId: "education-game-quiz",
+    storageBucket: "education-game-quiz.appspot.com",
+    messagingSenderId: "795703378603",
+    appId: "1:795703378603:web:61b719d3be3fe796ff2dee"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+// Console log to confirm Firebase initialization
+console.log(app.name ? 'Firebase Mode Activated!' : 'Firebase not working :(');
+
+
+
 let currentAnswer = 0;
 let correctAnswers = 0;
 let questionCount = 0;
@@ -207,43 +231,37 @@ function endGame() {
 }
 
 
-// Import the Firebase products that you want to use
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+document.addEventListener('DOMContentLoaded', () => {
+    // Listener for the name selection dropdown
+    document.getElementById('nameSelect').addEventListener('change', setName);
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyCBiL3yqWlj6sa_hiZjfMSIX0OW5A270jk",
-    authDomain: "education-game-quiz.firebaseapp.com",
-    databaseURL: "https://education-game-quiz-default-rtdb.firebaseio.com/",
-    projectId: "education-game-quiz",
-    storageBucket: "education-game-quiz.appspot.com",
-    messagingSenderId: "795703378603",
-    appId: "1:795703378603:web:61b719d3be3fe796ff2dee"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase Database and create a reference to the database
-const database = getDatabase(app);
-
-// Function to write sample data to your database
-function writeSampleData(userId, username) {
-    set(ref(database, 'users/' + userId), {
-        username: username
-    }).then(() => {
-        console.log('Data write succeeded');
-    }).catch((error) => {
-        console.log('Data write failed:', error);
+    // Listeners for math type selection
+    document.querySelectorAll('.math-symbol').forEach(symbol => {
+        symbol.addEventListener('click', (event) => {
+            selectMathType(event.target.textContent);
+        });
     });
-}
 
-// Call the function to write data
-writeSampleData('1', 'TestUser');
+    // Listeners for level selection buttons
+    document.querySelectorAll('.btn-level-group button').forEach(button => {
+        button.addEventListener('click', (event) => {
+            selectLevel(event.target.textContent);
+        });
+    });
 
-// Console log to confirm Firebase initialization
-console.log(app.name ? 'Firebase Mode Activated!' : 'Firebase not working :(');
+    // Listener for the start game button
+    document.getElementById('startButton').addEventListener('click', startGame);
+
+    // Listener for the submit answer button
+    document.querySelector('.submit-button').addEventListener('click', submitAnswer);
+
+    // Listener for the go back link
+    document.querySelector('.lowered-item').addEventListener('click', goBack);
+});
+
+
+
+
 
 
 

@@ -19,7 +19,7 @@
                 
                 <li class="lowered-item"><span id="levelDisplay" class="nav-item"></span></li>
                 
-                <li class="lowered-item" onclick="goBack()" style="cursor:pointer;">חזרה</li>
+                <li class="lowered-item" style="cursor:pointer;">חזרה</li>
                
                 <li> <select id="nameSelect" onchange="setName()">
                     <option value="Name1">רומי</option> <!-- Replace Name1 with the actual name -->
@@ -37,32 +37,32 @@
     <div id="selectionScreen">
         
         <div class="math-type-buttons">
-            <div class="math-symbol addition" onclick="selectMathType('+')">+</div>
-            <div class="math-symbol subtraction" onclick="selectMathType('-')">-</div>
-            <div class="math-symbol multiplication" onclick="selectMathType('×')">×</div>
-            <div class="math-symbol division" onclick="selectMathType('÷')">÷</div>
+            <div class="math-symbol addition">+</div>
+            <div class="math-symbol subtraction">-</div>
+            <div class="math-symbol multiplication">×</div>
+            <div class="math-symbol division">÷</div>
             <!-- Add more math types as needed -->
         </div>
 
         
         <div class="btn-level-group">
-            <button class="btn-level-1" onclick="selectLevel('1-10')">1-10</button>
-            <button class="btn-level-2" onclick="selectLevel('1-30')">1-30</button>
-            <button class="btn-level-3" onclick="selectLevel('50-100')">50-100</button>
+            <button class="btn-level-1">1-10</button>
+            <button class="btn-level-2">1-30</button>
+            <button class="btn-level-3">50-100</button>
             <!-- Add more levels as needed -->
         </div>
 
      </div>
 
 
-     <button id="startButton" class="Startgame" onclick="startGame()">התחל</button>
+     <button id="startButton" class="Startgame">התחל</button>
 
     <div id="gameScreen" style="display:none;">
         <div id="flashcard"></div>
         <input type="number" id="userAnswer">
         
         <div id="feedbackMessage"></div>
-        <button class="submit-button" onclick="submitAnswer()">בדיקה</button>
+        <button class="submit-button">בדיקה</button>
         <!--<div id="correctAnswersCount">Correct Answers: 0</div>-->
         
     </div>
@@ -72,7 +72,8 @@
 
        
     <img src="assets\images\PandaStright2.png" alt="Panda" id="pandaImage">
-    <script src="scripts\script.js"></script>
+
+  
     
     <div class="sea"></div>
     <div class="grass"></div>
@@ -80,7 +81,7 @@
     
     
 
-    <script type="module" src="script.js">
+    <script type="module" src="scripts\script.js">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         // TODO: Add SDKs for Firebase products that you want to use
@@ -100,7 +101,9 @@
         const app = initializeApp(firebaseConfig);
       </script>
 
+
       <script src="scripts\confetti.browser.min.js"></script>
+      
 
 </body>
 </html>
