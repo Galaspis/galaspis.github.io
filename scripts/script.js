@@ -62,7 +62,7 @@ let currentUser;
 
 
 function setName() {
-    var selectedName = document.getElementById('nameSelect').value;
+    var selectedName = document.getElementById('#nameSelect').value;
     var nameButton = document.querySelector('.nav-button');
 
     // Check if the elements are correctly selected
