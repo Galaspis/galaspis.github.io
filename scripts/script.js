@@ -255,7 +255,7 @@ function endGame() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Listener for the name selection dropdown
-    document.querySelector('#nameSelect').addEventListener('change', setName);
+    document.getElementById('#nameSelect').addEventListener('change', setName);
 
     // Listeners for math type selection
     document.querySelectorAll('.math-symbol').forEach(symbol => {
