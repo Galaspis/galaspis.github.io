@@ -60,29 +60,44 @@ let currentMathType;
 let currentLevel;
 let currentUser;
 
+import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
 function setName() {
     var selectedName = document.getElementById('nameSelect').value;
     var nameButton = document.querySelector('.nav-button');
-    if (selectedName) {
+
+    // Check if the elements are correctly selected
+    if (selectedName && nameButton) {
         nameButton.textContent = selectedName;
-        // Corrected Firebase reference
-        const userRef = ref(database, 'users/' + selectedName);
+
+        // Correct usage of Firebase modular version for getting data
+        const db = getDatabase();
+        const userRef = ref(db, 'users/' + selectedName);
+
         get(userRef).then((snapshot) => {
             if (snapshot.exists()) {
                 currentUser = snapshot.val();
                 console.log('Existing user:', currentUser);
                 // Update the game with existing user data
             } else {
-                set(userRef, { name: selectedName, correctAnswers: 0, questionCount: 0 });
+                // Correct usage of Firebase modular version for setting data
+                set(userRef, { name: selectedName, correctAnswers: 0, questionCount: 0 }).then(() => {
+                    console.log('New user created:', selectedName);
+                }).catch((error) => {
+                    console.error('Error creating new user:', error);
+                });
+
+                // Assuming you want to use this in your app after creating a user
                 currentUser = { name: selectedName, correctAnswers: 0, questionCount: 0 };
-                console.log('New user created:', currentUser);
-                // Initialize the game for a new user
             }
         }).catch((error) => {
             console.error('Error accessing user data:', error);
         });
+    } else {
+        console.error('setName: One or more elements not found');
     }
 }
+
 
 
 
