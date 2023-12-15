@@ -62,8 +62,13 @@ let currentUser;
 
 
 function setName() {
+    console.log('setName function called');
+
     var selectedName = document.getElementById('nameSelect').value;
+    console.log('Selected name:', selectedName);  // This should log the selected option's value
+    
     var nameButton = document.querySelector('.nav-button');
+    console.log('Name button element:', nameButton);  // This should log the element or null
 
     // Check if the elements are correctly selected
     if (selectedName && nameButton) {
