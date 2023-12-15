@@ -62,7 +62,7 @@ let currentUser;
 
 
 function setName() {
-    var selectedName = document.getElementById('#nameSelect').value;
+    var selectedName = document.getElementById('nameSelect').value;
     var nameButton = document.querySelector('.nav-button');
 
     // Check if the elements are correctly selected
@@ -269,14 +269,13 @@ function endGame() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Listener for the name selection dropdown
-    document.getElementById('#nameSelect').addEventListener('change', setName);
+    document.getElementById('nameSelect').addEventListener('change', setName);
 
     // Listeners for math type selection
     document.querySelectorAll('.math-symbol').forEach(symbol => {
         symbol.addEventListener('click', (event) => {
             selectMathType(event.target.textContent);
         });
-
     });
 
     // Listeners for level selection buttons
@@ -293,9 +292,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.submit-button').addEventListener('click', submitAnswer);
 
     // Listener for the go back link
-    document.querySelector('#goBack').addEventListener('click', goBack);
-
+    document.getElementById('goBack').addEventListener('click', goBack);
 });
+
 
 
 
