@@ -62,18 +62,12 @@ let currentUser;
 
 
 function setName() {
-    console.log('setName function called');
-
     var selectedName = document.getElementById('nameSelect').value;
-    console.log('Selected name:', selectedName);  // This should log the selected option's value
+    var mathTypeDisplayElement = document.getElementById('mathTypeDisplay'); // Example element to update
 
-    
+    if (selectedName && mathTypeDisplayElement) {
+        mathTypeDisplayElement.textContent = 'Selected User: ' + selectedName; // Update text content with selected name
 
-    // Check if the elements are correctly selected
-    if (selectedName && nameButton) {
-        nameButton.textContent = selectedName;
-
-        // Correct usage of Firebase modular version for getting data
         const db = getDatabase();
         const userRef = ref(db, 'users/' + selectedName);
 
@@ -81,17 +75,21 @@ function setName() {
             if (snapshot.exists()) {
                 currentUser = snapshot.val();
                 console.log('Existing user:', currentUser);
-                // Update the game with existing user data
             } else {
-                // Correct usage of Firebase modular version for setting data
-                set(userRef, { name: selectedName, correctAnswers: 0, questionCount: 0 }).then(() => {
+                set(userRef, {
+                    name: selectedName,
+                    correctAnswers: 0,
+                    questionCount: 0
+                }).then(() => {
                     console.log('New user created:', selectedName);
+                    currentUser = {
+                        name: selectedName,
+                        correctAnswers: 0,
+                        questionCount: 0
+                    };
                 }).catch((error) => {
                     console.error('Error creating new user:', error);
                 });
-
-                // Assuming you want to use this in your app after creating a user
-                currentUser = { name: selectedName, correctAnswers: 0, questionCount: 0 };
             }
         }).catch((error) => {
             console.error('Error accessing user data:', error);
@@ -100,6 +98,7 @@ function setName() {
         console.error('setName: One or more elements not found');
     }
 }
+
 
 
 
