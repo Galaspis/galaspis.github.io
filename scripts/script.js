@@ -63,6 +63,7 @@ let currentUser = null;
 
 function setName() {
     var selectedName = document.getElementById('nameSelect').value;
+    currentUser = selectedName; 
 
     if (selectedName) {
         // Correct usage of Firebase modular version for getting data
@@ -124,7 +125,7 @@ function selectMathType(mathType) {
     document.getElementById('mathTypeDisplay').textContent = mathTypeText;
 
     // Check if a user is selected before trying to update the database
-    if (currentUser && typeof currentUser === 'string') { // Make sure currentUser is a string
+    if (currentUser) {
         const db = getDatabase();
         const userMathTypeRef = ref(db, 'users/' + currentUser + '/mathTypeSelected');
 
