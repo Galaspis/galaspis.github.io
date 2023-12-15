@@ -100,11 +100,6 @@ function setName() {
     }
 }
 
-
-
-
-
-
 function selectMathType(mathType) {
     currentMathType = mathType;
     let mathTypeText = '';
@@ -124,11 +119,28 @@ function selectMathType(mathType) {
             break;
         // Add more cases as needed
     }
-    
+
     // Update display only when a choice is made
     document.getElementById('mathTypeDisplay').textContent = mathTypeText;
-                                                       
+
+    // Check if a user is selected before trying to update the database
+    if (currentUser) {
+        const db = getDatabase();
+        const userMathTypeRef = ref(db, 'users/' + currentUser + '/mathTypeSelected');
+
+        set(userMathTypeRef, mathType).then(() => {
+            console.log('Math type updated successfully in database.');
+        }).catch((error) => {
+            console.error('Error updating math type in database:', error);
+        });
+    } else {
+        console.error('No user selected. Cannot update math type in database.');
+    }
 }
+
+
+
+
 
 function selectLevel(level) {
     currentLevel = level;
