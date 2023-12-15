@@ -124,7 +124,7 @@ function selectMathType(mathType) {
     document.getElementById('mathTypeDisplay').textContent = mathTypeText;
 
     // Check if a user is selected before trying to update the database
-    if (currentUser) {
+    if (currentUser && typeof currentUser === 'string') { // Make sure currentUser is a string
         const db = getDatabase();
         const userMathTypeRef = ref(db, 'users/' + currentUser + '/mathTypeSelected');
 
