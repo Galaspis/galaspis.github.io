@@ -58,16 +58,14 @@ let correctAnswers = 0;
 let questionCount = 0;
 let currentMathType;
 let currentLevel;
-let currentUser;
+let currentUser = null;
 
 
 function setName() {
     var selectedName = document.getElementById('nameSelect').value;
-    var mathTypeDisplayElement = document.getElementById('mathTypeDisplay'); // Example element to update
 
-    if (selectedName && mathTypeDisplayElement) {
-        mathTypeDisplayElement.textContent = 'Selected User: ' + selectedName; // Update text content with selected name
-
+    if (selectedName) {
+        // Correct usage of Firebase modular version for getting data
         const db = getDatabase();
         const userRef = ref(db, 'users/' + selectedName);
 
@@ -75,7 +73,9 @@ function setName() {
             if (snapshot.exists()) {
                 currentUser = snapshot.val();
                 console.log('Existing user:', currentUser);
+                // Here you can perform any actions needed with existing user data
             } else {
+                // If the user does not exist, create a new user entry in the database
                 set(userRef, {
                     name: selectedName,
                     correctAnswers: 0,
@@ -87,6 +87,7 @@ function setName() {
                         correctAnswers: 0,
                         questionCount: 0
                     };
+                    // Here you can perform any initialization needed for a new user
                 }).catch((error) => {
                     console.error('Error creating new user:', error);
                 });
@@ -95,9 +96,10 @@ function setName() {
             console.error('Error accessing user data:', error);
         });
     } else {
-        console.error('setName: One or more elements not found');
+        console.error('setName: No name selected');
     }
 }
+
 
 
 
