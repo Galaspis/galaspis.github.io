@@ -63,7 +63,7 @@ let currentUser = null;
 
 function setName() {
     var selectedName = document.getElementById('nameSelect').value;
-    currentUser = selectedName; 
+    currentUser = { name: selectedName, correctAnswers: 0, questionCount: 0 };
 
     if (selectedName) {
         // Correct usage of Firebase modular version for getting data
@@ -125,10 +125,9 @@ function selectMathType(mathType) {
     // Update display only when a choice is made
     document.getElementById('mathTypeDisplay').textContent = mathTypeText;
 
-    // Check if a user is selected before trying to update the database
-    if (currentUser) {
+    if (currentUser && typeof currentUser.name === 'string') {
         const db = getDatabase();
-        const userMathTypeRef = ref(db, 'users/' + currentUser + '/mathTypeSelected');
+        const userMathTypeRef = ref(db, 'users/' + currentUser.name + '/mathTypeSelected');
 
         set(userMathTypeRef, mathType).then(() => {
             console.log('Math type updated successfully in database.');
@@ -136,11 +135,11 @@ function selectMathType(mathType) {
             console.error('Error updating math type in database:', error);
         });
     } else {
-        console.error('No user selected. Cannot update math type in database.');
+        console.error('No user selected or currentUser.name is not a valid string. Cannot update math type in database.');
+
     }
+
 }
-
-
 
 
 
