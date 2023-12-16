@@ -102,6 +102,7 @@ function setName() {
 }
 
 function selectMathType(mathType) {
+    console.log('Current user:', currentUser); // Add this to inspect currentUser
     currentMathType = mathType;
     let mathTypeText = '';
 
