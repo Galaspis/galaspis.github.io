@@ -145,8 +145,24 @@ function selectMathType(mathType) {
 
 function selectLevel(level) {
     currentLevel = level;
-    document.getElementById('levelDisplay').textContent = `${level}`;
+    document.getElementById('levelDisplay').textContent = level;
+
+    // Check if a user is selected (i.e., currentUser.name is a string) before trying to update the database
+    if (currentUser && typeof currentUser.name === 'string') {
+        const db = getDatabase();
+        const userLevelRef = ref(db, 'users/' + currentUser.name + '/levelSelected');
+
+        set(userLevelRef, level).then(() => {
+            console.log('Level updated successfully in database.');
+        }).catch((error) => {
+            console.error('Error updating level in database:', error);
+        });
+    } else {
+        console.error('No user selected or currentUser.name is not a valid string. Cannot update level in database.');
+    }
 }
+
+
 
 function startGame() {
     // Check if math type and level are selected
