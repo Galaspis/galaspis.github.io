@@ -1,0 +1,345 @@
+[
+    {
+        "EnglishWord": "blue",
+        "HebrewWord": "כחול",
+        "IncorrectOption1": "אדום",
+        "IncorrectOption2": "צהוב",
+        "IncorrectOption3": "ירוק"
+    },
+    {
+        "EnglishWord": "red",
+        "HebrewWord": "אדום",
+        "IncorrectOption1": "כחול",
+        "IncorrectOption2": "ירוק",
+        "IncorrectOption3": "ורוד"
+    },
+    {
+        "EnglishWord": "green",
+        "HebrewWord": "ירוק",
+        "IncorrectOption1": "אדום",
+        "IncorrectOption2": "צהוב",
+        "IncorrectOption3": "ורוד"
+    },
+    {
+        "EnglishWord": "yellow",
+        "HebrewWord": "צהוב",
+        "IncorrectOption1": "ירוק",
+        "IncorrectOption2": "ורוד",
+        "IncorrectOption3": "אדום"
+    },
+    {
+        "EnglishWord": "pink",
+        "HebrewWord": "ורוד",
+        "IncorrectOption1": "כחול",
+        "IncorrectOption2": "צהוב",
+        "IncorrectOption3": "ירוק"
+    },
+    {
+        "EnglishWord": "orange",
+        "HebrewWord": "כתום",
+        "IncorrectOption1": "ורוד",
+        "IncorrectOption2": "אדום",
+        "IncorrectOption3": "ירוק"
+    },
+    {
+        "EnglishWord": "black",
+        "HebrewWord": "שחור",
+        "IncorrectOption1": "לבן",
+        "IncorrectOption2": "חום",
+        "IncorrectOption3": "אפור"
+    },
+    {
+        "EnglishWord": "white",
+        "HebrewWord": "לבן",
+        "IncorrectOption1": "שחור",
+        "IncorrectOption2": "אפור",
+        "IncorrectOption3": "חום"
+    },
+    {
+        "EnglishWord": "brown",
+        "HebrewWord": "חום",
+        "IncorrectOption1": "שחור",
+        "IncorrectOption2": "לבן",
+        "IncorrectOption3": "אפור"
+    },
+    {
+        "EnglishWord": "gray",
+        "HebrewWord": "אפור",
+        "IncorrectOption1": "לבן",
+        "IncorrectOption2": "חום",
+        "IncorrectOption3": "שחור"
+    },
+    {
+        "EnglishWord": "purple",
+        "HebrewWord": "סגול",
+        "IncorrectOption1": "אדום",
+        "IncorrectOption2": "ירוק",
+        "IncorrectOption3": "כחול"
+    },
+    {
+        "EnglishWord": "zero",
+        "HebrewWord": "אפס",
+        "IncorrectOption1": "אחת",
+        "IncorrectOption2": "שתיים",
+        "IncorrectOption3": "שלוש"
+    },
+    {
+        "EnglishWord": "one",
+        "HebrewWord": "אחת",
+        "IncorrectOption1": "אפס",
+        "IncorrectOption2": "שתיים",
+        "IncorrectOption3": "שלוש"
+    },
+    {
+        "EnglishWord": "two",
+        "HebrewWord": "שתיים",
+        "IncorrectOption1": "אחת",
+        "IncorrectOption2": "אפס",
+        "IncorrectOption3": "ארבע"
+    },
+    {
+        "EnglishWord": "three",
+        "HebrewWord": "שלוש",
+        "IncorrectOption1": "שתיים",
+        "IncorrectOption2": "אחת",
+        "IncorrectOption3": "ארבע"
+    },
+    {
+        "EnglishWord": "four",
+        "HebrewWord": "ארבע",
+        "IncorrectOption1": "שלוש",
+        "IncorrectOption2": "אחת",
+        "IncorrectOption3": "חמש"
+    },
+    {
+        "EnglishWord": "five",
+        "HebrewWord": "חמש",
+        "IncorrectOption1": "ארבע",
+        "IncorrectOption2": "שלוש",
+        "IncorrectOption3": "שש"
+    },
+    {
+        "EnglishWord": "six",
+        "HebrewWord": "שש",
+        "IncorrectOption1": "חמש",
+        "IncorrectOption2": "ארבע",
+        "IncorrectOption3": "שבע"
+    },
+    {
+        "EnglishWord": "seven",
+        "HebrewWord": "שבע",
+        "IncorrectOption1": "שש",
+        "IncorrectOption2": "חמש",
+        "IncorrectOption3": "שמונה"
+    },
+    {
+        "EnglishWord": "eight",
+        "HebrewWord": "שמונה",
+        "IncorrectOption1": "שבע",
+        "IncorrectOption2": "שש",
+        "IncorrectOption3": "תשע"
+    },
+    {
+        "EnglishWord": "nine",
+        "HebrewWord": "תשע",
+        "IncorrectOption1": "שמונה",
+        "IncorrectOption2": "שבע",
+        "IncorrectOption3": "עשר"
+    },
+    {
+        "EnglishWord": "ten",
+        "HebrewWord": "עשר",
+        "IncorrectOption1": "תשע",
+        "IncorrectOption2": "שמונה",
+        "IncorrectOption3": "אחת עשרה"
+    },
+    {
+        "EnglishWord": "eleven",
+        "HebrewWord": "אחת עשרה",
+        "IncorrectOption1": "עשר",
+        "IncorrectOption2": "תשע",
+        "IncorrectOption3": "שתיים עשרה"
+    },
+    {
+        "EnglishWord": "twelve",
+        "HebrewWord": "שתים עשרה",
+        "IncorrectOption1": "אחת עשרה",
+        "IncorrectOption2": "עשר",
+        "IncorrectOption3": "תשע"
+    },
+    {
+        "EnglishWord": "pen",
+        "HebrewWord": "עט",
+        "IncorrectOption1": "ספר",
+        "IncorrectOption2": "מחברת",
+        "IncorrectOption3": "עיפרון"
+    },
+    {
+        "EnglishWord": "bag",
+        "HebrewWord": "תיק",
+        "IncorrectOption1": "עט",
+        "IncorrectOption2": "מחברת",
+        "IncorrectOption3": "עיפרון"
+    },
+    {
+        "EnglishWord": "pencil",
+        "HebrewWord": "עיפרון",
+        "IncorrectOption1": "עט",
+        "IncorrectOption2": "ספר",
+        "IncorrectOption3": "מחק"
+    },
+    {
+        "EnglishWord": "book",
+        "HebrewWord": "ספר",
+        "IncorrectOption1": "עט",
+        "IncorrectOption2": "מחברת",
+        "IncorrectOption3": "עיפרון"
+    },
+    {
+        "EnglishWord": "eraser",
+        "HebrewWord": "מחק",
+        "IncorrectOption1": "עפרון",
+        "IncorrectOption2": "עט",
+        "IncorrectOption3": "מחברת"
+    },
+    {
+        "EnglishWord": "notebook",
+        "HebrewWord": "מחברת",
+        "IncorrectOption1": "ספר",
+        "IncorrectOption2": "עיפרון",
+        "IncorrectOption3": "עט"
+    },
+    {
+        "EnglishWord": "ruler",
+        "HebrewWord": "סרגל",
+        "IncorrectOption1": "מחברת",
+        "IncorrectOption2": "עט",
+        "IncorrectOption3": "ספר"
+    },
+    {
+        "EnglishWord": "glue",
+        "HebrewWord": "דבק",
+        "IncorrectOption1": "מחק",
+        "IncorrectOption2": "סרגל",
+        "IncorrectOption3": "עיפרון"
+    },
+    {
+        "EnglishWord": "markers",
+        "HebrewWord": "טושים",
+        "IncorrectOption1": "סרגל",
+        "IncorrectOption2": "דבק",
+        "IncorrectOption3": "עט"
+    },
+    {
+        "EnglishWord": "pencil case",
+        "HebrewWord": "קלמר",
+        "IncorrectOption1": "טושים",
+        "IncorrectOption2": "ספר",
+        "IncorrectOption3": "מחברת"
+    },
+    {
+        "EnglishWord": "chair",
+        "HebrewWord": "כיסא",
+        "IncorrectOption1": "שולחן",
+        "IncorrectOption2": "ספר",
+        "IncorrectOption3": "עט"
+    },
+    {
+        "EnglishWord": "desk",
+        "HebrewWord": "שולחן",
+        "IncorrectOption1": "כיסא",
+        "IncorrectOption2": "טושים",
+        "IncorrectOption3": "דבק"
+    },
+    {
+        "EnglishWord": "boy",
+        "HebrewWord": "ילד",
+        "IncorrectOption1": "ילדה",
+        "IncorrectOption2": "חתול",
+        "IncorrectOption3": "כלב"
+    },
+    {
+        "EnglishWord": "girl",
+        "HebrewWord": "ילדה",
+        "IncorrectOption1": "ילד",
+        "IncorrectOption2": "חתול",
+        "IncorrectOption3": "כלב"
+    },
+    {
+        "EnglishWord": "cat",
+        "HebrewWord": "חתול",
+        "IncorrectOption1": "כלב",
+        "IncorrectOption2": "ילד",
+        "IncorrectOption3": "ילדה"
+    },
+    {
+        "EnglishWord": "dog",
+        "HebrewWord": "כלב",
+        "IncorrectOption1": "חתול",
+        "IncorrectOption2": "ילד",
+        "IncorrectOption3": "ילדה"
+    },
+    {
+        "EnglishWord": "sad",
+        "HebrewWord": "עצוב",
+        "IncorrectOption1": "שמח",
+        "IncorrectOption2": "גדול",
+        "IncorrectOption3": "קטן"
+    },
+    {
+        "EnglishWord": "happy",
+        "HebrewWord": "שמח",
+        "IncorrectOption1": "עצוב",
+        "IncorrectOption2": "גדול",
+        "IncorrectOption3": "קטן"
+    },
+    {
+        "EnglishWord": "big",
+        "HebrewWord": "גדול",
+        "IncorrectOption1": "קטן",
+        "IncorrectOption2": "שמח",
+        "IncorrectOption3": "עצוב"
+    },
+    {
+        "EnglishWord": "small",
+        "HebrewWord": "קטן",
+        "IncorrectOption1": "גדול",
+        "IncorrectOption2": "שמח",
+        "IncorrectOption3": "עצוב"
+    },
+    {
+        "EnglishWord": "hat",
+        "HebrewWord": "כובע",
+        "IncorrectOption1": "מעיל",
+        "IncorrectOption2": "נעליים",
+        "IncorrectOption3": "מכנסיים"
+    },
+    {
+        "EnglishWord": "man",
+        "HebrewWord": "איש",
+        "IncorrectOption1": "אישה",
+        "IncorrectOption2": "ילד",
+        "IncorrectOption3": "ילדה"
+    },
+    {
+        "EnglishWord": "bed",
+        "HebrewWord": "מיטה",
+        "IncorrectOption1": "כיסא",
+        "IncorrectOption2": "שולחן",
+        "IncorrectOption3": "ספר"
+    },
+    {
+        "EnglishWord": "box",
+        "HebrewWord": "קופסא",
+        "IncorrectOption1": "שקית",
+        "IncorrectOption2": "תיק",
+        "IncorrectOption3": "מחברת"
+    },
+    {
+        "EnglishWord": "van",
+        "HebrewWord": "מסחרית",
+        "IncorrectOption1": "אוטובוס",
+        "IncorrectOption2": "מכונית",
+        "IncorrectOption3": "אופנוע"
+    }
+]

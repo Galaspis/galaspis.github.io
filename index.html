@@ -1,72 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Math Practice Game</title>
-    <link rel="stylesheet" type="text/css" href="assets\css\style.css"> <!-- Ensure this CSS file combines the necessary styles from both original CSS files -->
-    
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets\css\style.css">
 </head>
+
 
 <body>
 
-    
     <nav class="navbar">
         
-            <ul class="nav-links">
-                <li class="lowered-item"><span id="mathTypeDisplay" class="nav-item"></span></li>
-                
-                <li class="lowered-item"><span id="levelDisplay" class="nav-item"></span></li>
-                
-                <li class="lowered-item" id="goBack" style="cursor:pointer;">חזרה</li>
-               
-                <li> <select id="nameSelect">
-                    <option value="Romi">רומי</option> <!-- Replace Name1 with the actual name -->
-                    <option value="Omri">עמרי</option> <!-- Replace Name2 with the actual name -->
-                </select></li>
-            </ul>
+        <ul class="nav-links">
+            <li> <select id="nameSelect">
+                <option value="Romi">רומי</option> <!-- Replace Name1 with the actual name -->
+                <option value="Omri">עמרי</option> <!-- Replace Name2 with the actual name -->
+            </select></li>
+        </ul>
 
-            
-        
-        
-            
     </nav>
 
-    
-    <div id="selectionScreen">
         
-        <div class="math-type-buttons">
-            <div class="math-symbol addition">+</div>
-            <div class="math-symbol subtraction">-</div>
-            <div class="math-symbol multiplication">×</div>
-            <div class="math-symbol division">÷</div>
-            <!-- Add more math types as needed -->
-        </div>
-
-        
-        <div class="btn-level-group">
-            <button class="btn-level-1">1-10</button>
-            <button class="btn-level-2">1-30</button>
-            <button class="btn-level-3">50-100</button>
-            <!-- Add more levels as needed -->
-        </div>
-
-     </div>
-
-
-     <button id="startButton" class="Startgame">התחל</button>
-
-    <div id="gameScreen" style="display:none;">
-        <div id="flashcard"></div>
-        <input type="number" id="userAnswer">
-        
-        <div id="feedbackMessage"></div>
-        <button class="submit-button">בדיקה</button>
-        <!--<div id="correctAnswersCount">Correct Answers: 0</div>-->
-        
+    <div class="button-container">
+        <a href="english.html" class="tutor-link">
+            <button class="english">אנגלית</button>
+        </a>
+        <a href="math.html" class="tutor-link">
+            <button class="math">מתמטיקה</button>
+        </a>
     </div>
+    
 
+
+    
     <div class="cloud"></div>
     <div class="cloud right-cloud"></div>
 
@@ -78,14 +44,14 @@
     <div class="sea"></div>
     <div class="grass"></div>
 
-    
-    
-
-    <script type="module" src="scripts\script.js"></script>
+    <script src="scripts\script.js"></script>
 
 
-    <script src="scripts\confetti.browser.min.js"></script>
-      
 
 </body>
+
+
+
+
+
 </html>

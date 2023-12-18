@@ -692,7 +692,7 @@ left: 0;
     }
 
     button.submit-button{
-        margin-top: 150px;
+        margin-top: 100px;
     }
 
    
@@ -830,7 +830,49 @@ left: 0;
     
 
 
+/* for the bridge page */
 
+.button-container {
+    position: absolute; /* Add relative positioning */
+    left: 42%; /* Adjust this value to move the group to the left */
+    display: flex;
+    top: 200px;
+}
+
+
+
+.english, .math  {
+    background-color: #ffc301; /* Yellow background */
+    color: white; /* White text */
+    font-weight: bold;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 14px; /* Rounded corners */
+    font-size: 50px;
+    cursor: pointer;
+    box-shadow: 
+        0 8px 12px rgba(244, 41, 98, 0.5), /* Subtle shadow for depth */
+        0 12px 16px rgba(237, 9, 127, 0.4); /* Darker shade for 3D effect, matches button color */
+    transition: all 0.3s ease;
+    font-family: 'Luminari';
+    margin-left: 10px;
+    text-shadow: 1px 1px 2px rgba(244, 41, 98, 0.8); /* Text shadow for a lifted text effect */
+    position: relative; /* Needed for the active state */
+}
+
+.english:hover, .math:hover {
+    box-shadow: 
+        0 10px 14px rgba(244, 9, 98, 0.6), /* Slightly larger shadow on hover */
+        0 14px 18px rgba(237, 9, 127, 0.6); /* Darker and larger shadow for 3D effect on hover */
+    
+}
+
+.english:active, .math:active {
+    box-shadow: 
+        0 4px 6px rgba(244, 9, 98, 0.2), /* Smaller shadow for pressed effect */
+        0 6px 8px rgba(237, 9, 127, 0.3); /* More subtle 3D effect for pressed state */
+    transform: translateY(1px); /* Push the button down */
+}
 
 
 

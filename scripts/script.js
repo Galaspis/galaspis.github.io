@@ -231,10 +231,7 @@ function generateProblem() {
         // Add more cases as needed
     }
 
-    questionCount++;
-    if (questionCount > 10) {
-        endGame();
-    }
+    
 
 
     document.getElementById('userAnswer').focus();
