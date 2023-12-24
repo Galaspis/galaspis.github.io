@@ -193,44 +193,26 @@ left: 0;
     
 }
 
-
-#questionText {
-    
-    padding: 20px;
-    margin-left: 470px;
-    width: 620px;
-    font-size: 80px;
-    font-family: 'Luminari';
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(244, 41, 98, 0.8); /* Text shadow for a lifted text effect */
-    position: relative;
-    bottom: -50px;
-    top: 1px;
-    
-    
-    
-       
-    } 
+ 
 
 
-    #optionsContainer {
+    .button-container {
         position: absolute; /* Add relative positioning */
-        left: 37%; /* Adjust this value to move the group to the left */
+        left: 0%; /* Adjust this value to move the group to the left */
         display: flex;
-        top: 290px;
+        top: 200px;
     }
     
     
     
-    .option-button  {
+    .english, .math  {
         background-color: #ffc301; /* Yellow background */
         color: white; /* White text */
         font-weight: bold;
         padding: 10px 50px;
         border: none;
         border-radius: 14px; /* Rounded corners */
-        font-size: 30px;
+        font-size: 50px;
         cursor: pointer;
         box-shadow: 
             0 8px 12px rgba(244, 41, 98, 0.5), /* Subtle shadow for depth */
@@ -242,14 +224,14 @@ left: 0;
         position: relative; /* Needed for the active state */
     }
     
-    .option-button:hover {
+    .english:hover, .math:hover {
         box-shadow: 
             0 10px 14px rgba(244, 9, 98, 0.6), /* Slightly larger shadow on hover */
             0 14px 18px rgba(237, 9, 127, 0.6); /* Darker and larger shadow for 3D effect on hover */
         
     }
     
-    .option-button:active {
+    .english:active, .math:active {
         box-shadow: 
             0 4px 6px rgba(244, 9, 98, 0.2), /* Smaller shadow for pressed effect */
             0 6px 8px rgba(237, 9, 127, 0.3); /* More subtle 3D effect for pressed state */
@@ -259,7 +241,7 @@ left: 0;
 
     @media screen and (min-width: 1700px) {
 
-        #questionText {
+        .button-container {
             margin-left: 1000px;
             font-size: 200px;
         }
@@ -272,7 +254,7 @@ left: 0;
             
         }
 
-        .option-button {
+        .english, .math {
             font-size: 50px;
             margin-left: 25px;
         }
@@ -303,6 +285,7 @@ left: 0;
 
     @media screen and (max-width: 768px) {
 
+
         .body{
             height: 100%;
         }
@@ -327,18 +310,12 @@ left: 0;
             display: flex;
         }
 
-        #nameSelect {
-            padding: 5px 15px;
-            font-size:20px;
-            margin-left: 5px;
-        }
-
         .grass {
             position: absolute;
             bottom: -902px;
             left: 0;
             width: 100%;
-            height: 132%;
+            height: 323%;
             
             
             }
@@ -346,13 +323,13 @@ left: 0;
         .sea{
             position: absolute;
             width: 100%;
-            height: 29%;
-            bottom: -629px;
+            height: 62%;
+            bottom: -662px;
         }
     
         #pandaImage{
             position: absolute;
-            bottom: -218vw;
+            bottom: -238vw;
             width: 340px; /* Or whatever new width you want */
             height: auto; /* This will maintain the aspect ratio */
             left: 50%;
@@ -360,8 +337,9 @@ left: 0;
          
         }
 
-        /* Adjust the main cloud size for mobile */
-        .cloud {
+
+          /* Adjust the main cloud size for mobile */
+          .cloud {
             width: 40px; /* Smaller width for a smaller cloud */
             height: 15px; /* Smaller height for a smaller cloud */
             top: auto;
@@ -402,30 +380,33 @@ left: 0;
             height: 15px; /* Adjust height for main cloud body */
         }
 
-        #questionText {
 
-            margin-left: -121px;
-            
-        }
-
-        #optionsContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Center the buttons horizontally */
-            gap: 10px; /* Adjust the gap between the buttons */
+        .button-container {
             left: 0;
+            display: inline;
+            top: 110px;
+        }
+    
+        .english, .math {
+            margin-top: 25px;
+    
+        }
+    
+        .math {
+            font-size: 48px;
+            border-radius: 14px;
+            padding: 13px 30px;
         }
 
-        .option-button {
-            flex: 1 1 43%; /* Flex grow, flex shrink, and basis set to 45% */
-            max-width: 45%; /* Maximum width of each button */
-            text-align: center;
-            padding: 10px; /* Adjust the padding */
-            /* Add other styles such as background, border, etc. as needed */
+        #nameSelect {
+            padding: 5px 15px;
+            font-size:20px;
+            margin-left: 5px;
         }
-
     
     }
+    
+    
 
 
 
